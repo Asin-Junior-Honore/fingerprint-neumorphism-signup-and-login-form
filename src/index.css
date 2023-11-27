@@ -1,13 +1,74 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .inputbox {
+    @apply relative flex;
+  }
+  .inputbox input {
+    @apply border-none outline-none bg-transparent  text-[1em];
+  }
+  .userdetails {
+    @apply w-[100%] px-[20px] py-[15px] mb-[20px];
+  }
+  .shadow-input {
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+      inset -5px -5px 10px #fffb;
+  }
+  .icon {
+    @apply absolute left-[250px] top-[25%];
+  }
+  form label {
+    @apply flex items-center;
+  }
+  form input[type="checkbox"] {
+    @apply mr-[5px];
+  }
+  form input[type="submit"] {
+    @apply mt-[20px] w-[100%] px-[20px] py-[15px];
+  }
+  .parent-shadow {
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 20px #fffb;
+  }
+  .shadow-submitbtn {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px #fff;
+  }
+  form input[type="submit"]:focus {
+    @apply shadow3;
+  }
+  .shadow3 {
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px #fff;
+  }
+  .fingerprint {
+    @apply flex justify-center items-center flex-col gap-[2.5rem] cursor-pointer;
+  }
+  .fingerprint .finger-box {
+    @apply pt-[15px] px-[20px] pb-[10px] gradients shadow-submitbtn border;
+  }
+  .border {
+    border: 3px solid #edf1f4;
+  }
+  .gradients {
+    background: linear-gradient(315deg, #101112, #10181b);
+  }
+
+  .input-box input {
+    @apply w-[165px] py-[8px] px-[15px] rounded-md shadow-input border-none outline-none bg-transparent text-[1em];
+  }
+  .input-box label {
+    @apply text-[15px] ml-2 mb-3 inline-block;
+  }
+  .input-box button {
+    @apply shadow-submitbtn border-none outline-none bg-transparent mt-[30px] w-[94%] px-[20px] py-[15px];
+  }
+  .input-box button:focus {
+    @apply shadow3;
+  }
+  .svg {
+    @apply text-white text-[35px];
+  }
+  .border-succes {
+    border: 2px solid;
+  }
 }
